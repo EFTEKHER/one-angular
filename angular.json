@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -22,6 +23,16 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/app/assests/logo.png",
+              "src/app/assests",
+              "src/app/assests/users",
+              "./public/users",
+              "./public/users/user-1.jpg",
+              "./public/users/user-2.jpg",
+              "./public/users/user-3.jpg",
+              "./public/users/user-4.jpg",
+              "./public/users/user-5.jpg",
+              "./public/users/user-6.jpg",
               {
                 "glob": "**/*",
                 "input": "public"
