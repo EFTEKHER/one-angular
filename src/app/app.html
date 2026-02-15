@@ -7,9 +7,15 @@
 
   @for(user of users;track user.id ) {
     <li>
-      <app-user [id]="user.id" [avatar]="user.avatar" [name]="user.name" (select)="onSelectU($event) " (getName)="onselectName($event)"></app-user>
+      <app-user [users]="user" (select)="onSelectU($event)  " [selected]="user.id===selectedUserId"></app-user>
     </li>
   }
 </ul>
-<app-userspecific name={{selectedUser()}}></app-userspecific>
+@if(selecteduser){
+<app-userspecific [userId]="selecteduser.id" [name]="selecteduser.name"></app-userspecific>
+}
+
+@else{
+<p id="fallback">No User Selected</p>
+}
 </main>

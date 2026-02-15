@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { User } from './user/user';
 import { DUMMY_USERS } from './user/dummy_user';
-import { Userspecific } from './userspecific/userspecific';
+import { Userspecific } from './tasks/userspecific/userspecific';
 import { Signal } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -13,14 +13,17 @@ import { Signal } from '@angular/core';
 })
 export class App {
   users=DUMMY_USERS;
-  selectedUser=signal<string|null>(null);
+  selectedUserId=''
+
+  get selecteduser(){
+    console.log(this.selectedUserId)
+    return this.users.find(user=>user.id===this.selectedUserId)!;
+  }
   onSelectU(userId:string){
 
+    this.selectedUserId=userId;
     console.log('selected user with id'+userId)
   }
-  onselectName(userName:string){
-    this.selectedUser.set(userName);
-    console.log('selected user with name'+userName)
-  }
+
   protected readonly title = signal('one-angular');
 }

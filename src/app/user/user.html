@@ -1,10 +1,10 @@
-<div>
+<app-card>
 
     <!-- <img  [src]=" '../../../public/users/'+selectedUser.avatar" [alt]="selectedUser.name"/> -->
-    <button (click)="onSelectUser()">
-      <img  [src]="imagePath()" [alt]="name()"/>
-    <span>{{ name() }}</span>
+    <button [class.active]="selected" (click)="onSelectUser()">
+      <img  [src]="imagePath()" [alt]="users.name"/>
+    <span>{{ users.name }}</span>
     </button>
 
 
-</div>
+</app-card>
